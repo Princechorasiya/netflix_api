@@ -25,7 +25,9 @@ app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
 app.use("/api/movies", movieRouter);
 app.use("/api/list", listRouter);
-
+app.get("/", (req, res) => {
+	res.status(200).json({ message: "server running" });
+});
 app.listen(8081, () => {
 	console.log("server running on port ");
 });
